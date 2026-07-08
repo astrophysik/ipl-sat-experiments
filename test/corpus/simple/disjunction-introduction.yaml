@@ -1,0 +1,7 @@
+id: ipl.simple.8
+source: simple
+tags: [disjunction, implication, introduction]
+expected:
+  validity: valid
+  satisfiability: sat
+formula: "p -> p or q"

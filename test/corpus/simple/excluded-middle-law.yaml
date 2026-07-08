@@ -1,0 +1,7 @@
+id: ipl.simple.4
+source: simple
+tags: [disjunction, negation, classical-separator]
+expected:
+  validity: invalid
+  satisfiability: sat
+formula: "p or not p"

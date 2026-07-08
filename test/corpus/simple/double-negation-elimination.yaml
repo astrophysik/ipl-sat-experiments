@@ -1,0 +1,7 @@
+id: ipl.simple.5
+source: simple
+tags: [implication, negation, classical-separator]
+expected:
+  validity: invalid
+  satisfiability: sat
+formula: "not (not p) -> p"

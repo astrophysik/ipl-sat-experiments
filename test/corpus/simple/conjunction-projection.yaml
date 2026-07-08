@@ -1,0 +1,7 @@
+id: ipl.simple.7
+source: simple
+tags: [conjunction, implication, projection]
+expected:
+  validity: valid
+  satisfiability: sat
+formula: "p and q -> p"

@@ -1,0 +1,7 @@
+id: ipl.simple.9
+source: simple
+tags: [implication, transitivity]
+expected:
+  validity: valid
+  satisfiability: sat
+formula: "(p -> q) -> (q -> r) -> p -> r"

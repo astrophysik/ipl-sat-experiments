@@ -1,0 +1,7 @@
+id: ipl.simple.2
+source: simple
+tags: [disjunction, negation, de-morgan]
+expected:
+  validity: valid
+  satisfiability: sat
+formula: "not (A or B) <-> (not A and not B)"

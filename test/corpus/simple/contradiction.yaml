@@ -1,0 +1,7 @@
+id: ipl.simple.10
+source: simple
+tags: [conjunction, negation, contradiction]
+expected:
+  validity: invalid
+  satisfiability: unsat
+formula: "p and not p"

@@ -1,0 +1,7 @@
+id: ipl.simple.6
+source: simple
+tags: [implication, identity]
+expected:
+  validity: valid
+  satisfiability: sat
+formula: "p -> p"

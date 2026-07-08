@@ -1,0 +1,7 @@
+id: ipl.simple.1
+source: simple
+tags: [implication, classical-separator]
+expected:
+  validity: invalid
+  satisfiability: sat
+formula: "((p -> q) -> p) -> p"
