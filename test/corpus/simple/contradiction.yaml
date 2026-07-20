@@ -1,7 +1,14 @@
-id: ipl.simple.10
+id: simple.10
 source: simple
-tags: [conjunction, negation, contradiction]
+tags: [ipl, conjunction, negation, contradiction]
+provenance:
+  kind: handwritten
+  note: "the only case in this group with an inconsistent context"
+context: []
+premises:
+  - 'p'
+  - 'p -> BOT'
+goal: 'BOT'
 expected:
-  validity: invalid
-  satisfiability: unsat
-formula: "p and not p"
+  entailment: derivable
+  premises_consistency: inconsistent

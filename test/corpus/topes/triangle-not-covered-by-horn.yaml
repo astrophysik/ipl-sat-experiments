@@ -1,0 +1,18 @@
+id: topes.13
+source: topes
+tags: [tope-prop, eq, leq, horn, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    converse of topes.12, and underivable: the triangle has interior. The pair
+    topes.12 / topes.13 is the sharpest statement of what a horn inclusion is,
+    and a solver that gets both right has the coverage query essentially right.
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 's <= t'
+goal: 's === 0_2 \/ t === 1_2'
+expected:
+  entailment: underivable
+  premises_consistency: consistent

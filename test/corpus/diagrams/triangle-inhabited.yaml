@@ -1,0 +1,14 @@
+id: diagrams.1
+source: diagrams
+tags: [exists, tope-prop, leq, draft]
+provenance:
+  kind: speculative
+  note: >-
+    the triangle is inhabited, so it renders as a non-empty shape. Witnessed
+    by any point with s === t, e.g. (0_2, 0_2).
+context: []
+premises: []
+goal: 'exists (t : 2), exists (s : 2), s <= t'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

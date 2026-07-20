@@ -1,7 +1,14 @@
-id: ipl.simple.2
+id: simple.2
 source: simple
-tags: [disjunction, negation, de-morgan]
+tags: [ipl, disjunction, negation, de-morgan]
+provenance:
+  kind: handwritten
+  note: >-
+    the de Morgan law that survives intuitionistically. Was previously recorded
+    as a biconditional; split into simple.2 and simple.12, both derivable.
+context: []
+premises: []
+goal: '((p \/ q) -> BOT) -> ((p -> BOT) /\ (q -> BOT))'
 expected:
-  validity: valid
-  satisfiability: sat
-formula: "not (A or B) <-> (not A and not B)"
+  entailment: derivable
+  premises_consistency: consistent

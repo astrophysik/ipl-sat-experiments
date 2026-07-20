@@ -1,0 +1,15 @@
+#lang rzk-1
+
+-- Defining a function on the horn by cases on its two faces.
+-- Typechecks only if the two topes cover the horn and the branches
+-- agree on the overlap, the vertex (1, 0).
+
+#def Lambda
+  : (2 × 2) → TOPE
+  := \ (t , s) → (s ≡ 0₂) ∨ (t ≡ 1₂)
+
+#def horn-by-cases
+  ( A : U)
+  ( a : A)
+  : ((t , s) : Lambda) → A
+  := \ (t , s) → recOR (s ≡ 0₂ ↦ a , t ≡ 1₂ ↦ a)

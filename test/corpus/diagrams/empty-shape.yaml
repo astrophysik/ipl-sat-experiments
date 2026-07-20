@@ -1,0 +1,15 @@
+id: diagrams.4
+source: diagrams
+tags: [exists, tope-prop, eq, draft]
+provenance:
+  kind: speculative
+  note: >-
+    an empty shape has nothing to render. Underivable, and the negative
+    counterpart of diagrams.1: without it a solver that answers derivable to
+    every existential would pass this group.
+context: []
+premises: []
+goal: 'exists (t : 2), t === 0_2 /\ t === 1_2'
+expected:
+  entailment: underivable
+  premises_consistency: consistent

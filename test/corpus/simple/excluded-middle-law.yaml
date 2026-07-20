@@ -1,7 +1,12 @@
-id: ipl.simple.4
+id: simple.4
 source: simple
-tags: [disjunction, negation, classical-separator]
+tags: [ipl, disjunction, negation, classical-separator]
+provenance:
+  kind: handwritten
+  note: "law of excluded middle"
+context: []
+premises: []
+goal: 'p \/ (p -> BOT)'
 expected:
-  validity: invalid
-  satisfiability: sat
-formula: "p or not p"
+  entailment: underivable
+  premises_consistency: consistent

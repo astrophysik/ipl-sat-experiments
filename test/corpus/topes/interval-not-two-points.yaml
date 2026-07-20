@@ -1,0 +1,16 @@
+id: topes.9
+source: topes
+tags: [tope-prop, eq, classical-separator]
+provenance:
+  kind: handwritten
+  note: >-
+    a point of the interval need not be an endpoint. The interval is linearly
+    ordered but not two-valued, and this is what stops linearity (topes.1)
+    from degenerating into classical reasoning about points.
+context:
+  - "t : 2"
+premises: []
+goal: 't === 0_2 \/ t === 1_2'
+expected:
+  entailment: underivable
+  premises_consistency: consistent

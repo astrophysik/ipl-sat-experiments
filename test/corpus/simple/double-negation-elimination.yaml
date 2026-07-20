@@ -1,7 +1,11 @@
-id: ipl.simple.5
+id: simple.5
 source: simple
-tags: [implication, negation, classical-separator]
+tags: [ipl, implication, negation, classical-separator]
+provenance:
+  kind: handwritten
+context: []
+premises: []
+goal: '((p -> BOT) -> BOT) -> p'
 expected:
-  validity: invalid
-  satisfiability: sat
-formula: "not (not p) -> p"
+  entailment: underivable
+  premises_consistency: consistent

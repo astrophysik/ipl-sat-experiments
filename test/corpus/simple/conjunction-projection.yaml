@@ -1,7 +1,11 @@
-id: ipl.simple.7
+id: simple.7
 source: simple
-tags: [conjunction, implication, projection]
+tags: [ipl, conjunction, implication, projection]
+provenance:
+  kind: handwritten
+context: []
+premises: []
+goal: 'p /\ q -> p'
 expected:
-  validity: valid
-  satisfiability: sat
-formula: "p and q -> p"
+  entailment: derivable
+  premises_consistency: consistent

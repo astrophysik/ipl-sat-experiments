@@ -1,0 +1,16 @@
+id: topes.8
+source: topes
+tags: [tope-prop, eq, leq, antisymmetry]
+provenance:
+  kind: handwritten
+  note: >-
+    a point below 0_2 is 0_2. Needs the order axioms and antisymmetry
+    together, so it is a good check that the two interact.
+context:
+  - "t : 2"
+premises:
+  - 't <= 0_2'
+goal: 't === 0_2'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

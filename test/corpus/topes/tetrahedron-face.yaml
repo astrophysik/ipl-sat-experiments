@@ -1,0 +1,21 @@
+id: topes.17
+source: topes
+tags: [tope-prop, leq, transitivity]
+provenance:
+  kind: handwritten
+  note: >-
+    Delta^3 = {(t1, t2, t3) : 2 * 2 * 2 | t3 <= t2 /\ t2 <= t1} projects onto a
+    face of Delta^2. Asked when associativity of composition is typechecked,
+    and the first case here with three interval variables, so it is also the
+    smallest scaling test.
+context:
+  - "t1 : 2"
+  - "t2 : 2"
+  - "t3 : 2"
+premises:
+  - 't3 <= t2'
+  - 't2 <= t1'
+goal: 't3 <= t1'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

@@ -1,0 +1,15 @@
+id: simple.13
+source: simple
+tags: [ipl, disjunction, negation]
+provenance:
+  kind: handwritten
+  note: >-
+    the double negation of excluded middle, derivable intuitionistically.
+    Guards against a solver that rejects too much: compare simple.4, which
+    is the same formula without the two negations and must be rejected.
+context: []
+premises: []
+goal: '((p \/ (p -> BOT)) -> BOT) -> BOT'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

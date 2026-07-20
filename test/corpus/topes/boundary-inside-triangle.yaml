@@ -1,0 +1,17 @@
+id: topes.14
+source: topes
+tags: [tope-prop, eq, leq, boundary, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    the boundary of Delta^2 sits inside Delta^2. The third disjunct s === t
+    needs equality to interact with the order, unlike topes.12.
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 's === 0_2 \/ t === 1_2 \/ s === t'
+goal: 's <= t'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

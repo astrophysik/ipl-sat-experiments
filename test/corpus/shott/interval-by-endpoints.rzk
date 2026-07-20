@@ -1,0 +1,10 @@
+#lang rzk-1
+
+-- Defining a function on the interval by cases on its endpoints.
+-- Must be rejected: a point of the interval need not be an endpoint.
+
+#def interval-by-cases
+  ( A : U)
+  ( a : A)
+  : (t : 2) → A
+  := \ t → recOR (t ≡ 0₂ ↦ a , t ≡ 1₂ ↦ a)

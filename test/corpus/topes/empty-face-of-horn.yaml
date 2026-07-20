@@ -1,0 +1,21 @@
+id: topes.18
+source: topes
+tags: [tope-prop, eq, leq, horn]
+provenance:
+  kind: handwritten
+  note: >-
+    an unreachable branch: no point of the triangle has t === 0_2 and
+    s === 1_2 unless it also collapses the endpoints. Rzk's typechecker meets
+    these when it splits a shape and must discard the impossible cases; the
+    goal is arbitrary, since anything follows.
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 's <= t'
+  - 't === 0_2'
+  - 's === 1_2'
+goal: 'BOT'
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

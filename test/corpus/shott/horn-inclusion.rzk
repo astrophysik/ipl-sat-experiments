@@ -1,0 +1,18 @@
+#lang rzk-1
+
+-- Restricting a function on the triangle to the horn.
+-- Typechecks only if the horn is a subshape of the triangle.
+
+#def Delta2
+  : (2 × 2) → TOPE
+  := \ (t , s) → s ≤ t
+
+#def Lambda
+  : (2 × 2) → TOPE
+  := \ (t , s) → (s ≡ 0₂) ∨ (t ≡ 1₂)
+
+#def restrict-to-horn
+  ( A : U)
+  ( f : ((t , s) : Delta2) → A)
+  : ( ( t , s) : Lambda) → A
+  := \ (t , s) → f (t , s)

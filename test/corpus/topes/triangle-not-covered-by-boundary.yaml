@@ -1,0 +1,19 @@
+id: topes.19
+source: topes
+tags: [tope-prop, eq, leq, boundary, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    converse of topes.14, and underivable: the boundary does not cover the
+    triangle. Note that the analogous fact for Delta^1 is topes.9; here the
+    disjunction has a third face, so a solver may fail this one while passing
+    topes.9.
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 's <= t'
+goal: 's === 0_2 \/ t === 1_2 \/ s === t'
+expected:
+  entailment: underivable
+  premises_consistency: consistent

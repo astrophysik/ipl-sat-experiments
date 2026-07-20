@@ -1,0 +1,13 @@
+id: shott.7
+source: shott
+tags: [tope-prop, eq]
+provenance:
+  kind: handwritten
+  note: >-
+    the consistency query, which is the one query of the three that has no
+    goal. Rzk meets it whenever a shape is split and the impossible cases must
+    be discarded; the sequent form is topes.18.
+rzk: empty-shape.rzk
+expected:
+  typechecks: accepted
+queries: []

@@ -1,0 +1,19 @@
+id: topes.12
+source: topes
+tags: [tope-prop, eq, leq, horn, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    the horn Lambda^2_1 = {(t, s) : 2 * 2 | s === 0_2 \/ t === 1_2} is a
+    subshape of the triangle Delta^2 = {(t, s) : 2 * 2 | s <= t}. Asked
+    whenever a Segal-type horn filler is typechecked. The shott group has the
+    same fact as an end-to-end test.
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 's === 0_2 \/ t === 1_2'
+goal: 's <= t'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

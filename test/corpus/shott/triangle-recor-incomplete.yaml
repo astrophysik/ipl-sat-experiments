@@ -1,0 +1,14 @@
+id: shott.4
+source: shott
+tags: [tope-prop, eq, leq, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    an incomplete case split, differing from shott.3 only in the shape. This
+    is the failure mode an unsound coverage check produces, and it is silent:
+    accepting the file leaves the function undefined on the interior.
+rzk: triangle-recor-incomplete.rzk
+expected:
+  typechecks: rejected
+  error_contains: "tope"
+queries: []

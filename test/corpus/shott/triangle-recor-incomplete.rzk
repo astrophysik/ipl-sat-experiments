@@ -1,0 +1,14 @@
+#lang rzk-1
+
+-- The same two faces, but over the whole triangle.
+-- Must be rejected: they do not cover the interior.
+
+#def Delta2
+  : (2 × 2) → TOPE
+  := \ (t , s) → s ≤ t
+
+#def triangle-by-cases
+  ( A : U)
+  ( a : A)
+  : ((t , s) : Delta2) → A
+  := \ (t , s) → recOR (s ≡ 0₂ ↦ a , t ≡ 1₂ ↦ a)

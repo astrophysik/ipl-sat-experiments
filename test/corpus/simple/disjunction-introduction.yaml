@@ -1,7 +1,11 @@
-id: ipl.simple.8
+id: simple.8
 source: simple
-tags: [disjunction, implication, introduction]
+tags: [ipl, disjunction, implication, introduction]
+provenance:
+  kind: handwritten
+context: []
+premises: []
+goal: 'p -> p \/ q'
 expected:
-  validity: valid
-  satisfiability: sat
-formula: "p -> p or q"
+  entailment: derivable
+  premises_consistency: consistent

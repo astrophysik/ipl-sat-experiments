@@ -1,7 +1,12 @@
-id: ipl.simple.1
+id: simple.1
 source: simple
-tags: [implication, classical-separator]
+tags: [ipl, implication, classical-separator]
+provenance:
+  kind: handwritten
+  note: "Peirce's law; the standard witness that a solver is not intuitionistic"
+context: []
+premises: []
+goal: '((p -> q) -> p) -> p'
 expected:
-  validity: invalid
-  satisfiability: sat
-formula: "((p -> q) -> p) -> p"
+  entailment: underivable
+  premises_consistency: consistent

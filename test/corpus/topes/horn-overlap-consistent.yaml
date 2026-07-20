@@ -1,0 +1,19 @@
+id: topes.15
+source: topes
+tags: [tope-prop, eq, leq, horn]
+provenance:
+  kind: handwritten
+  note: >-
+    the two faces of the horn overlap in the vertex (1, 0). recOR must check
+    that the two branches agree there, so the query is whether this context is
+    consistent rather than what follows from it.
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 's === 0_2'
+  - 't === 1_2'
+goal: 's <= t'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

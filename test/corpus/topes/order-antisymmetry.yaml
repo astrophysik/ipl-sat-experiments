@@ -1,0 +1,16 @@
+id: topes.2
+source: topes
+tags: [tope-prop, leq, eq, antisymmetry]
+provenance:
+  kind: handwritten
+  note: "antisymmetry of <=; one of the rules saturated by entailM"
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 't <= s'
+  - 's <= t'
+goal: 't === s'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

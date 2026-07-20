@@ -1,0 +1,15 @@
+id: shott.6
+source: shott
+tags: [tope-prop, eq, coverage, classical-separator]
+provenance:
+  kind: handwritten
+  note: >-
+    the sharpest test in this group. A solver that treats the interval as two
+    truth values accepts this file, and then an arrow in a Segal type is
+    determined by its endpoints, which collapses the theory. Compare shott.5,
+    which must still be accepted.
+rzk: interval-by-endpoints.rzk
+expected:
+  typechecks: rejected
+  error_contains: "tope"
+queries: []

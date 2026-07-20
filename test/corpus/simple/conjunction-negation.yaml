@@ -1,7 +1,15 @@
-id: ipl.simple.3
+id: simple.3
 source: simple
-tags: [conjunction, negation, de-morgan, classical-separator]
+tags: [ipl, conjunction, negation, de-morgan, classical-separator]
+provenance:
+  kind: handwritten
+  note: >-
+    the de Morgan law that fails intuitionistically. Was previously recorded
+    as a biconditional; the tope syntax has no <->, so the two directions are
+    now separate cases (see simple.11 for the converse, which does hold).
+context: []
+premises: []
+goal: '((p /\ q) -> BOT) -> ((p -> BOT) \/ (q -> BOT))'
 expected:
-  validity: invalid
-  satisfiability: sat
-formula: "not (A and B) <-> (not A or not B)"
+  entailment: underivable
+  premises_consistency: consistent

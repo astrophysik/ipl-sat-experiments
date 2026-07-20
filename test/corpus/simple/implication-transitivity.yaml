@@ -1,7 +1,11 @@
-id: ipl.simple.9
+id: simple.9
 source: simple
-tags: [implication, transitivity]
+tags: [ipl, implication, transitivity]
+provenance:
+  kind: handwritten
+context: []
+premises: []
+goal: '(p -> q) -> (q -> r) -> p -> r'
 expected:
-  validity: valid
-  satisfiability: sat
-formula: "(p -> q) -> (q -> r) -> p -> r"
+  entailment: derivable
+  premises_consistency: consistent

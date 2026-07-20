@@ -1,0 +1,15 @@
+id: topes.6
+source: topes
+tags: [tope-prop, eq]
+provenance:
+  kind: handwritten
+  note: >-
+    the endpoints of the interval are distinct. This is the workhorse
+    inconsistency: most unreachable branches in sHoTT collapse to it.
+context: []
+premises:
+  - '0_2 === 1_2'
+goal: 'BOT'
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

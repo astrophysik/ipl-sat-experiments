@@ -1,0 +1,10 @@
+#lang rzk-1
+
+-- Defining a function on the whole square by splitting it into the two
+-- triangles. Typechecks only if the interval is linearly ordered.
+
+#def square-by-cases
+  ( A : U)
+  ( a : A)
+  : ((t , s) : 2 × 2) → A
+  := \ (t , s) → recOR (s ≤ t ↦ a , t ≤ s ↦ a)

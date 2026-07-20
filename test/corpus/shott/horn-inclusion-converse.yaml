@@ -1,0 +1,14 @@
+id: shott.2
+source: shott
+tags: [tope-prop, eq, leq, horn, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    converse of shott.1. Paired with it, this is the end-to-end form of
+    topes.12 / topes.13: a solver that accepts this file has made the horn
+    inclusion an equality and broken Segal types.
+rzk: horn-inclusion-converse.rzk
+expected:
+  typechecks: rejected
+  error_contains: "tope"
+queries: []

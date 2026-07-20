@@ -1,0 +1,13 @@
+id: shott.5
+source: shott
+tags: [tope-prop, leq, linearity, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    linearity of the interval, exercised through a case split rather than
+    asked directly. Together with shott.6 it pins down that linearity does not
+    make the interval two-valued: the sequent form is topes.1 against topes.9.
+rzk: square-by-linearity.rzk
+expected:
+  typechecks: accepted
+queries: []

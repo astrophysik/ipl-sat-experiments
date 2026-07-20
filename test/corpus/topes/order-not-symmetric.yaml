@@ -1,0 +1,15 @@
+id: topes.10
+source: topes
+tags: [tope-prop, leq]
+provenance:
+  kind: handwritten
+  note: "the interval is directed: <= is an order, not an equivalence"
+context:
+  - "t : 2"
+  - "s : 2"
+premises:
+  - 't <= s'
+goal: 's <= t'
+expected:
+  entailment: underivable
+  premises_consistency: consistent

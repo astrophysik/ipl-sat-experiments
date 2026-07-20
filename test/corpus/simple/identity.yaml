@@ -1,7 +1,12 @@
-id: ipl.simple.6
+id: simple.6
 source: simple
-tags: [implication, identity]
+tags: [ipl, implication, identity]
+provenance:
+  kind: handwritten
+  note: "smoke test: the weakest formula the solver must accept"
+context: []
+premises: []
+goal: 'p -> p'
 expected:
-  validity: valid
-  satisfiability: sat
-formula: "p -> p"
+  entailment: derivable
+  premises_consistency: consistent

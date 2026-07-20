@@ -1,0 +1,13 @@
+id: topes.4
+source: topes
+tags: [tope-prop, leq]
+provenance:
+  kind: handwritten
+  note: "0_2 is the least point of the interval"
+context:
+  - "t : 2"
+premises: []
+goal: '0_2 <= t'
+expected:
+  entailment: derivable
+  premises_consistency: consistent

@@ -1,0 +1,12 @@
+id: shott.1
+source: shott
+tags: [tope-prop, eq, leq, horn, coverage]
+provenance:
+  kind: handwritten
+  note: >-
+    the shape inclusion behind every Segal-type horn filler, as an Rzk file.
+    The same fact as a bare sequent is topes.12.
+rzk: horn-inclusion.rzk
+expected:
+  typechecks: accepted
+queries: []
