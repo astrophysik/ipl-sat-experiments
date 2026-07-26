@@ -1,0 +1,14 @@
+id: topes.order-projection
+source: topes
+tags: [tope-prop, leq, projection, harvested]
+expected:
+  validity: valid
+  premises_consistency: consistent
+context:
+  - "((t1, t2), t3) : 2 × 2 × 2"
+hypotheses:
+  - "t2 ≤ t1"
+goal: "t2 ≤ t1"
+provenance:
+  kind: harvested
+  note: "Projection from the tope context."

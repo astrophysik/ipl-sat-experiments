@@ -3,6 +3,10 @@ source: simple
 tags: [implication, transitivity]
 expected:
   validity: valid
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "(p → q) → (q → r) → p → r"
-provenance: "handwritten IPL implication transitivity example"
+goal: "(p → q) → (q → r) → p → r"
+provenance:
+  kind: handwritten
+  note: "IPL implication transitivity example"

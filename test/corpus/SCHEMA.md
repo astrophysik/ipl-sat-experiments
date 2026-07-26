@@ -25,6 +25,11 @@ For example, `test/corpus/simple/peirce-law.yaml` has id
 Name of the corpus group. This should match the directory name under
 `test/corpus/`.
 
+Current corpus groups:
+
+- `simple`: textbook IPL formulas
+- `topes`: propositional tope sequents harvested from sHoTT `entailM` queries
+
 ### `tags`
 
 Inline YAML list of lowercase labels that describe the formula. Tags are used
@@ -58,8 +63,15 @@ Allowed `validity` values:
 - `valid`: the formula is valid
 - `invalid`: the formula is not valid
 
+For tope sequents, `validity` means derivability of `Ξ | Φ ⊢ ψ`.
+
+Optional `premises_consistency` values for sequent cases:
+
+- `consistent`: `Ξ | Φ ⊬ ⊥`
+- `inconsistent`: `Ξ | Φ ⊢ ⊥`
+
 For IPL proof search, `validity` is the primary result: the solver checks
-derivability of the sequent `hypotheses ⊢ formula`. Do not add
+derivability of the sequent `hypotheses ⊢ goal`. Do not add
 `satisfiability` to IPL proof-search cases. A formula may be neither derivable
 nor refutable intuitionistically, so classical `sat`/`unsat` is not the solver
 contract here.
@@ -78,22 +90,38 @@ sequents rather than closed formulas.
 
 ```yaml
 hypotheses: []
-formula: "p → p"
+goal: "p → p"
 ```
 
-### `formula`
+### `context`
+
+Optional cube-layer context `Ξ`, as a list of declarations. This is empty or
+absent for pure IPL cases and explicit for tope cases.
+
+```yaml
+context:
+  - "(t, s) : 2 × 2"
+```
+
+### `goal`
 
 Formula string used as the sequent goal. Keep it quoted.
 
 ### `provenance`
 
-Human-readable description of where the task came from. Use this to distinguish
+Structured description of where the task came from. Use this to distinguish
 handwritten examples, instrumented `entailM` queries, sHoTT judgments, diagram
 rendering goals, or external benchmark converters.
 
 ```yaml
-provenance: "handwritten IPL separator"
+provenance:
+  kind: handwritten
+  note: "handwritten IPL separator"
 ```
+
+Common `kind` values are `handwritten`, `harvested`, `external`, and
+`speculative`. Add `ref` when the task comes from a file, log line, or external
+benchmark id.
 
 ## Formula Grammar
 
@@ -104,19 +132,25 @@ Current corpus formulas use these connectives:
 - `∨`
 - `→`
 - `↔`
+- `⊤`
+- `⊥`
+- `≡`
+- `≤`
 
-Atoms are ASCII identifiers beginning with a letter and followed by letters,
-digits, underscores, apostrophes, or hyphens. Parentheses may be used anywhere
-to disambiguate.
+Atoms are identifiers beginning with a letter and followed by letters, digits,
+subscripts, underscores, apostrophes, or hyphens. Parentheses may be used
+anywhere to disambiguate. Tope terms additionally use tuple syntax such as
+`(t, s)` and projections such as `π₁ x`.
 
 Precedence, from strongest to weakest:
 
 1. Parentheses: `(φ)`
-2. Negation: `¬φ`
-3. Conjunction: `φ ∧ ψ`, left-associative
-4. Disjunction: `φ ∨ ψ`, left-associative
-5. Implication: `φ → ψ`, right-associative
-6. Biconditional: `φ ↔ ψ`, non-associative; parenthesize chains explicitly
+2. Atomic topes: `⊤`, `⊥`, `a ≡ b`, `a ≤ b`
+3. Negation: `¬φ`
+4. Conjunction: `φ ∧ ψ`, left-associative
+5. Disjunction: `φ ∨ ψ`, left-associative
+6. Implication: `φ → ψ`, right-associative
+7. Biconditional: `φ ↔ ψ`, non-associative; parenthesize chains explicitly
 
 For example, `p ∧ q → p` parses as `(p ∧ q) → p`, and
 `p → q → r` parses as `p → (q → r)`.

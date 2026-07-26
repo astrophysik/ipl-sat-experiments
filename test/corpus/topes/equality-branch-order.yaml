@@ -1,0 +1,14 @@
+id: topes.equality-branch-order
+source: topes
+tags: [tope-prop, eq, leq, top, harvested]
+expected:
+  validity: valid
+  premises_consistency: consistent
+context:
+  - "(s, t) : 2 × 2"
+hypotheses:
+  - "t ≡ s"
+goal: "t ≤ s"
+provenance:
+  kind: harvested
+  note: "Order follows by substituting t ≡ s into reflexivity s ≤ s."

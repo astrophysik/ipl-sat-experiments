@@ -3,6 +3,10 @@ source: simple
 tags: [conjunction, negation, contradiction]
 expected:
   validity: invalid
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "p ∧ ¬ p"
-provenance: "handwritten IPL contradiction example"
+goal: "p ∧ ¬ p"
+provenance:
+  kind: handwritten
+  note: "IPL contradiction example"

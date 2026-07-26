@@ -1,0 +1,13 @@
+id: topes.top-conjunction
+source: topes
+tags: [tope-prop, leq, conjunction, top, harvested]
+expected:
+  validity: valid
+  premises_consistency: consistent
+context:
+  - "(s, t) : 2 × 2"
+hypotheses: []
+goal: "⊤"
+provenance:
+  kind: harvested
+  note: "Trivial top goal under a non-empty cube context."

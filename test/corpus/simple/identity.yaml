@@ -3,6 +3,10 @@ source: simple
 tags: [implication, identity]
 expected:
   validity: valid
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "p → p"
-provenance: "handwritten IPL identity example"
+goal: "p → p"
+provenance:
+  kind: handwritten
+  note: "IPL identity example"

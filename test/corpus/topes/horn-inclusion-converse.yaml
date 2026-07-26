@@ -1,0 +1,15 @@
+id: topes.horn-inclusion-converse
+source: topes
+tags: [tope-prop, eq, leq, horn, coverage, harvested]
+expected:
+  validity: invalid
+  premises_consistency: consistent
+context:
+  - "(t, s) : 2 × 2"
+  - "t : 2 × 2"
+hypotheses:
+  - "s ≤ t"
+goal: "s ≡ 0₂ ∨ t ≡ 1₂"
+provenance:
+  kind: harvested
+  note: "The triangle is not covered by this horn condition."
