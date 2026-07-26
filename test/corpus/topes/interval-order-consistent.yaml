@@ -2,7 +2,7 @@ id: topes.interval-order-consistent
 source: topes
 tags: [tope-prop, leq, consistency, harvested]
 expected:
-  validity: invalid
+  entailment: underivable
   premises_consistency: consistent
 context:
   - "(s, t) : 2 × 2"

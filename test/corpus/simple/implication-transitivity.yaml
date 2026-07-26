@@ -2,7 +2,7 @@ id: ipl.simple.implication-transitivity
 source: simple
 tags: [implication, transitivity]
 expected:
-  validity: valid
+  entailment: derivable
   premises_consistency: consistent
 context: []
 hypotheses: []

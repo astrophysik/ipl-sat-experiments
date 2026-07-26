@@ -2,7 +2,7 @@ id: topes.order-projection
 source: topes
 tags: [tope-prop, leq, projection, harvested]
 expected:
-  validity: valid
+  entailment: derivable
   premises_consistency: consistent
 context:
   - "((t1, t2), t3) : 2 × 2 × 2"

@@ -2,7 +2,7 @@ id: topes.bottom-is-least-branch
 source: topes
 tags: [tope-prop, eq, leq, top, harvested]
 expected:
-  validity: valid
+  entailment: derivable
   premises_consistency: consistent
 context:
   - "(s, t) : 2 × 2"

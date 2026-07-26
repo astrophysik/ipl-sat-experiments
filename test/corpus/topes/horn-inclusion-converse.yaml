@@ -2,7 +2,7 @@ id: topes.horn-inclusion-converse
 source: topes
 tags: [tope-prop, eq, leq, horn, coverage, harvested]
 expected:
-  validity: invalid
+  entailment: underivable
   premises_consistency: consistent
 context:
   - "(t, s) : 2 × 2"

@@ -2,7 +2,7 @@ id: ipl.simple.double-negation-elimination
 source: simple
 tags: [implication, negation, classical-separator]
 expected:
-  validity: invalid
+  entailment: underivable
   premises_consistency: consistent
 context: []
 hypotheses: []

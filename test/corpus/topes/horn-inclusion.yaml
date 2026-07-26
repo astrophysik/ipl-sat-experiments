@@ -2,7 +2,7 @@ id: topes.horn-inclusion
 source: topes
 tags: [tope-prop, eq, leq, horn, coverage, harvested]
 expected:
-  validity: valid
+  entailment: derivable
   premises_consistency: consistent
 context:
   - "(t, s) : 2 × 2"

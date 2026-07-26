@@ -2,7 +2,7 @@ id: ipl.simple.excluded-middle-law
 source: simple
 tags: [disjunction, negation, classical-separator]
 expected:
-  validity: invalid
+  entailment: underivable
   premises_consistency: consistent
 context: []
 hypotheses: []

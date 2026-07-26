@@ -2,7 +2,7 @@ id: ipl.simple.disjunction-negation
 source: simple
 tags: [disjunction, negation, de-morgan]
 expected:
-  validity: valid
+  entailment: derivable
   premises_consistency: consistent
 context: []
 hypotheses: []

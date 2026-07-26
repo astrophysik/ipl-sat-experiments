@@ -2,7 +2,7 @@ id: ipl.simple.disjunction-introduction
 source: simple
 tags: [disjunction, implication, introduction]
 expected:
-  validity: valid
+  entailment: derivable
   premises_consistency: consistent
 context: []
 hypotheses: []

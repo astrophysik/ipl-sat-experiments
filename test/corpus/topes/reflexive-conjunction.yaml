@@ -2,7 +2,7 @@ id: topes.reflexive-conjunction
 source: topes
 tags: [tope-prop, leq, conjunction, reflexivity, harvested]
 expected:
-  validity: valid
+  entailment: derivable
   premises_consistency: consistent
 context:
   - "((t1, t2), t3) : 2 × 2 × 2"

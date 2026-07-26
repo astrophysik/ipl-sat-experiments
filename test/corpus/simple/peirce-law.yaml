@@ -2,7 +2,7 @@ id: ipl.simple.peirce-law
 source: simple
 tags: [implication, classical-separator]
 expected:
-  validity: invalid
+  entailment: underivable
   premises_consistency: consistent
 context: []
 hypotheses: []
