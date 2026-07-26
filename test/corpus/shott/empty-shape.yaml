@@ -1,0 +1,11 @@
+id: shott.empty-shape
+kind: rzk
+source: shott
+tags: [tope-prop, eq]
+provenance:
+  kind: handwritten
+  note: "the consistency query, which is the one query of the three that has no goal. Rzk meets it whenever a shape is split and the impossible cases must be discarded."
+input:
+  rzk: empty-shape.rzk
+expected:
+  typechecks: accepted

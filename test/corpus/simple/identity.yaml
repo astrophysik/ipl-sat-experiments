@@ -1,12 +1,14 @@
 id: ipl.simple.identity
+kind: sequent
 source: simple
 tags: [implication, identity]
-expected:
-  entailment: derivable
-  premises_consistency: consistent
-context: []
-hypotheses: []
-goal: "p → p"
 provenance:
   kind: handwritten
   note: "IPL identity example"
+input:
+  context: []
+  hypotheses: []
+  goal: p → p
+expected:
+  entailment: derivable
+  premises_consistency: consistent

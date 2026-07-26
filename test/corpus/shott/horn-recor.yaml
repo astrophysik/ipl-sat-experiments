@@ -1,0 +1,11 @@
+id: shott.horn-recor
+kind: rzk
+source: shott
+tags: [tope-prop, eq, horn, coverage]
+provenance:
+  kind: handwritten
+  note: "the coverage query in its own right. Both branches are the same term, so the agreement check on the overlap succeeds for trivial reasons and the file isolates coverage from definitional equality."
+input:
+  rzk: horn-recor.rzk
+expected:
+  typechecks: accepted

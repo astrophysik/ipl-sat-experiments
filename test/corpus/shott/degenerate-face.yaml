@@ -1,0 +1,11 @@
+id: shott.degenerate-face
+kind: rzk
+source: shott
+tags: [tope-prop, eq, leq, degenerate]
+provenance:
+  kind: handwritten
+  note: "the only case in this group needing equality and order together, so it is the one that should start failing first once the equality theory of step 4 is stubbed or disabled."
+input:
+  rzk: degenerate-face.rzk
+expected:
+  typechecks: accepted

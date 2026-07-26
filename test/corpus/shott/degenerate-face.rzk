@@ -1,0 +1,19 @@
+#lang rzk-1
+
+-- On the face t ≡ 0₂ the triangle degenerates to a point, so a function
+-- defined on that face restricts to it. Typechecks only if the solver
+-- combines the order axioms with antisymmetry.
+
+#def DegenerateFace
+  : (2 × 2) → TOPE
+  := \ (t , s) → (s ≤ t) ∧ (t ≡ 0₂)
+
+#def Bottom
+  : (2 × 2) → TOPE
+  := \ (t , s) → s ≡ 0₂
+
+#def restrict-to-degenerate-face
+  ( A : U)
+  ( f : ((t , s) : Bottom) → A)
+  : ((t , s) : DegenerateFace) → A
+  := \ (t , s) → f (t , s)
