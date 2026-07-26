@@ -2,7 +2,11 @@ id: ipl.simple.disjunction-introduction
 source: simple
 tags: [disjunction, implication, introduction]
 expected:
-  validity: valid
+  entailment: derivable
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "p → p ∨ q"
-provenance: "handwritten IPL disjunction introduction example"
+goal: "p → p ∨ q"
+provenance:
+  kind: handwritten
+  note: "IPL disjunction introduction example"

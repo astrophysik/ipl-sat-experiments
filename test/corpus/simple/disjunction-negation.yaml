@@ -2,7 +2,11 @@ id: ipl.simple.disjunction-negation
 source: simple
 tags: [disjunction, negation, de-morgan]
 expected:
-  validity: valid
+  entailment: derivable
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "¬ (A ∨ B) ↔ (¬ A ∧ ¬ B)"
-provenance: "handwritten IPL De Morgan example"
+goal: "¬ (A ∨ B) ↔ (¬ A ∧ ¬ B)"
+provenance:
+  kind: handwritten
+  note: "IPL De Morgan example"

@@ -2,7 +2,11 @@ id: ipl.simple.conjunction-negation
 source: simple
 tags: [conjunction, negation, de-morgan, classical-separator]
 expected:
-  validity: invalid
+  entailment: underivable
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "¬ (A ∧ B) ↔ (¬ A ∨ ¬ B)"
-provenance: "handwritten IPL De Morgan separator"
+goal: "¬ (A ∧ B) ↔ (¬ A ∨ ¬ B)"
+provenance:
+  kind: handwritten
+  note: "IPL De Morgan separator"

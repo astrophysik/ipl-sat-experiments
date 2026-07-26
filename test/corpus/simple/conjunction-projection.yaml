@@ -2,7 +2,11 @@ id: ipl.simple.conjunction-projection
 source: simple
 tags: [conjunction, implication, projection]
 expected:
-  validity: valid
+  entailment: derivable
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "p ∧ q → p"
-provenance: "handwritten IPL introduction/projection example"
+goal: "p ∧ q → p"
+provenance:
+  kind: handwritten
+  note: "IPL introduction/projection example"

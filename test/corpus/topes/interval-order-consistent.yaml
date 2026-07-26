@@ -1,0 +1,14 @@
+id: topes.interval-order-consistent
+source: topes
+tags: [tope-prop, leq, consistency, harvested]
+expected:
+  entailment: underivable
+  premises_consistency: consistent
+context:
+  - "(s, t) : 2 × 2"
+hypotheses:
+  - "t ≤ s"
+goal: "⊥"
+provenance:
+  kind: harvested
+  note: "A single interval-order premise is consistent."

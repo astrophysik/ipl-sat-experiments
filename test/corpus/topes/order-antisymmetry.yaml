@@ -1,0 +1,15 @@
+id: topes.order-antisymmetry
+source: topes
+tags: [tope-prop, eq, leq, antisymmetry, harvested]
+expected:
+  entailment: derivable
+  premises_consistency: consistent
+context:
+  - "(t, s) : 2 × 2"
+hypotheses:
+  - "t ≤ s"
+  - "s ≤ t"
+goal: "t ≡ s"
+provenance:
+  kind: harvested
+  note: "Minimal antisymmetry query; saturation facts are left for the solver."

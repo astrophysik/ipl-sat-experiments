@@ -2,7 +2,11 @@ id: ipl.simple.double-negation-elimination
 source: simple
 tags: [implication, negation, classical-separator]
 expected:
-  validity: invalid
+  entailment: underivable
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "¬ (¬ p) → p"
-provenance: "handwritten IPL classical separator"
+goal: "¬ (¬ p) → p"
+provenance:
+  kind: handwritten
+  note: "IPL classical separator"

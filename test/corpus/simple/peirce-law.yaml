@@ -2,7 +2,11 @@ id: ipl.simple.peirce-law
 source: simple
 tags: [implication, classical-separator]
 expected:
-  validity: invalid
+  entailment: underivable
+  premises_consistency: consistent
+context: []
 hypotheses: []
-formula: "((p → q) → p) → p"
-provenance: "handwritten IPL classical separator"
+goal: "((p → q) → p) → p"
+provenance:
+  kind: handwritten
+  note: "IPL classical separator"
