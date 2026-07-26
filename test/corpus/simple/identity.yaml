@@ -1,7 +1,8 @@
-id: ipl.simple.6
+id: ipl.simple.identity
 source: simple
 tags: [implication, identity]
 expected:
   validity: valid
-  satisfiability: sat
-formula: "p -> p"
+hypotheses: []
+formula: "p → p"
+provenance: "handwritten IPL identity example"

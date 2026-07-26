@@ -1,7 +1,8 @@
-id: ipl.simple.2
+id: ipl.simple.disjunction-negation
 source: simple
 tags: [disjunction, negation, de-morgan]
 expected:
   validity: valid
-  satisfiability: sat
-formula: "not (A or B) <-> (not A and not B)"
+hypotheses: []
+formula: "¬ (A ∨ B) ↔ (¬ A ∧ ¬ B)"
+provenance: "handwritten IPL De Morgan example"

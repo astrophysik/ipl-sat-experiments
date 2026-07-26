@@ -1,7 +1,8 @@
-id: ipl.simple.4
+id: ipl.simple.excluded-middle-law
 source: simple
 tags: [disjunction, negation, classical-separator]
 expected:
   validity: invalid
-  satisfiability: sat
-formula: "p or not p"
+hypotheses: []
+formula: "p ∨ ¬ p"
+provenance: "handwritten IPL classical separator"

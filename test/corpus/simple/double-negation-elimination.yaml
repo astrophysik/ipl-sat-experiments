@@ -1,7 +1,8 @@
-id: ipl.simple.5
+id: ipl.simple.double-negation-elimination
 source: simple
 tags: [implication, negation, classical-separator]
 expected:
   validity: invalid
-  satisfiability: sat
-formula: "not (not p) -> p"
+hypotheses: []
+formula: "¬ (¬ p) → p"
+provenance: "handwritten IPL classical separator"

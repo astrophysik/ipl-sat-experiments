@@ -1,7 +1,8 @@
-id: ipl.simple.7
+id: ipl.simple.conjunction-projection
 source: simple
 tags: [conjunction, implication, projection]
 expected:
   validity: valid
-  satisfiability: sat
-formula: "p and q -> p"
+hypotheses: []
+formula: "p ∧ q → p"
+provenance: "handwritten IPL introduction/projection example"
