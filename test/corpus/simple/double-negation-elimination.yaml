@@ -1,12 +1,14 @@
 id: ipl.simple.double-negation-elimination
+kind: sequent
 source: simple
 tags: [implication, negation, classical-separator]
-expected:
-  entailment: underivable
-  premises_consistency: consistent
-context: []
-hypotheses: []
-goal: "¬ (¬ p) → p"
 provenance:
   kind: handwritten
   note: "IPL classical separator"
+input:
+  context: []
+  hypotheses: []
+  goal: "¬ (¬ p) → p"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

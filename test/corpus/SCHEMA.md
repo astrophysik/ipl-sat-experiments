@@ -1,8 +1,11 @@
 # Test Corpus YAML Schema
 
 Each test case is stored as one YAML file under `test/corpus/<source>/`.
-The file describes one sequent and the expected solver result for that
-sequent.
+There are two case kinds:
+
+- a sequent case, which describes `Ξ | Φ ⊢ ψ` and the expected solver result
+- an Rzk case, which points to a self-contained `.rzk` file and records whether
+  the typechecker should accept or reject it
 
 ## Fields
 
@@ -29,10 +32,21 @@ Current corpus groups:
 
 - `simple`: textbook IPL formulas
 - `topes`: propositional tope sequents
+- `shott`: end-to-end Rzk files exercising the tope layer through the
+  typechecker
+
+### `kind`
+
+Case kind. This determines the shape of `input` and `expected`.
+
+Allowed values:
+
+- `sequent`: direct solver case for a sequent `Ξ | Φ ⊢ ψ`
+- `rzk`: end-to-end Rzk typechecker case
 
 ### `tags`
 
-Inline YAML list of lowercase labels that describe the sequent. Tags are used
+Inline YAML list of lowercase labels that describe the case. Tags are used
 for grouping and filtering tests. Prefer stable semantic tags over incidental
 details of a particular harvested query.
 
@@ -63,6 +77,7 @@ Tope structure tags:
 - `eq`: uses interval/cube-term equality `≡`
 - `leq`: uses directed interval order `≤`
 - `coverage`: coverage or shape-inclusion condition
+- `degenerate`: degenerate face or shape condition
 - `horn`: horn-shape condition
 - `consistency`: explicitly checks whether premises derive `⊥`
 
@@ -76,7 +91,40 @@ Rule-pattern tags:
 - `reflexivity`: uses reflexivity of equality or order
 - `transitivity`: uses transitivity of implication or directed interval order
 
-### `expected`
+### `input` for sequent cases
+
+Input sequent data.
+
+```yaml
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "s ≡ 0₂ ∨ t ≡ 1₂"
+  goal: "s ≤ t"
+```
+
+`context` is cube-layer context `Ξ`, as a list of declarations. Use `[]` when
+the case is purely propositional.
+
+`hypotheses` is tope context `Φ`, as a list of formulas taken conjunctively.
+Use `[]` for closed formulas or goals derivable outright.
+
+`goal` is formula string used as sequent goal `ψ`. Keep it quoted.
+
+### `input` for Rzk cases
+
+Input Rzk file data.
+
+```yaml
+input:
+  rzk: horn-inclusion.rzk
+```
+
+`rzk` is the name of the `.rzk` file for an Rzk case. The file is a sibling of
+the YAML file and should use the same basename.
+
+### `expected` for sequent cases
 
 Expected logical result.
 
@@ -95,32 +143,29 @@ two cases sharing a context agree on it. It is recorded separately because it is
 its own query in Rzk's typechecker, and because it explains away the cases where
 a goal is derivable only from an exploded context.
 
+### `expected` for Rzk cases
 
-### `hypotheses`
-
-Optional list of formula strings used as the left side of the sequent. Use an
-empty list for closed formulas. New corpus entries should include this field
-explicitly, even when it is empty, because instrumented `entailM` cases are
-sequents rather than closed formulas.
+Expected typechecker result.
 
 ```yaml
-hypotheses: []
-goal: "p → p"
+expected:
+  typechecks: accepted
 ```
 
-### `context`
+Allowed `typechecks` values:
 
-Optional cube-layer context `Ξ`, as a list of declarations. This is empty or
-absent for pure IPL cases and explicit for tope cases.
+- `accepted`: the Rzk file should typecheck
+- `rejected`: the Rzk file should be rejected
+
+For rejected cases, add `error_contains`, a diagnostic substring that should be
+present in the error. This guards against passing because of an unrelated
+syntax or name-resolution failure.
 
 ```yaml
-context:
-  - "(t, s) : 2 × 2"
+expected:
+  typechecks: rejected
+  error_contains: "tope"
 ```
-
-### `goal`
-
-Formula string used as the sequent goal. Keep it quoted.
 
 ### `provenance`
 
@@ -173,3 +218,42 @@ Precedence, from strongest to weakest:
 
 For example, `p ∧ q → p` parses as `(p ∧ q) → p`, and
 `p → q → r` parses as `p → (q → r)`.
+
+## Examples
+
+### Sequent case
+
+```yaml
+id: topes.horn-inclusion
+kind: sequent
+source: topes
+tags: [tope-prop, eq, leq, horn, coverage, harvested]
+provenance:
+  kind: harvested
+  note: "Horn face condition entails membership in the triangle."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "s ≡ 0₂ ∨ t ≡ 1₂"
+  goal: "s ≤ t"
+expected:
+  entailment: derivable
+  premises_consistency: consistent
+```
+
+### Rzk case
+
+```yaml
+id: shott.horn-inclusion
+kind: rzk
+source: shott
+tags: [tope-prop, eq, leq, horn, coverage]
+provenance:
+  kind: handwritten
+  note: "The shape inclusion behind every Segal-type horn filler."
+input:
+  rzk: horn-inclusion.rzk
+expected:
+  typechecks: accepted
+```

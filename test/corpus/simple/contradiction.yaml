@@ -1,12 +1,14 @@
 id: ipl.simple.contradiction
+kind: sequent
 source: simple
 tags: [conjunction, negation, contradiction]
-expected:
-  entailment: underivable
-  premises_consistency: consistent
-context: []
-hypotheses: []
-goal: "p ∧ ¬ p"
 provenance:
   kind: handwritten
   note: "IPL contradiction example"
+input:
+  context: []
+  hypotheses: []
+  goal: p ∧ ¬ p
+expected:
+  entailment: underivable
+  premises_consistency: consistent

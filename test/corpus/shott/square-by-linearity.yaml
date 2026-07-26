@@ -1,0 +1,11 @@
+id: shott.square-by-linearity
+kind: rzk
+source: shott
+tags: [tope-prop, leq, linearity, coverage]
+provenance:
+  kind: handwritten
+  note: "linearity of the interval, exercised through a case split rather than asked directly. Together with shott.interval-by-endpoints it pins down that linearity does not make the interval two-valued."
+input:
+  rzk: square-by-linearity.rzk
+expected:
+  typechecks: accepted

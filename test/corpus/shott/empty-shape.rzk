@@ -1,0 +1,14 @@
+#lang rzk-1
+
+-- A shape whose tope context is inconsistent is empty, so a function out
+-- of it needs no branches at all. Typechecks only if the solver derives
+-- BOT from the context.
+
+#def Empty
+  : 2 → TOPE
+  := \ t → (t ≡ 0₂) ∧ (t ≡ 1₂)
+
+#def out-of-empty
+  ( A : U)
+  : (t : Empty) → A
+  := \ t → recBOT

@@ -1,0 +1,18 @@
+#lang rzk-1
+
+-- Restricting a function on the horn to the triangle.
+-- Must be rejected: the triangle is not covered by the horn.
+
+#def Delta2
+  : (2 × 2) → TOPE
+  := \ (t , s) → s ≤ t
+
+#def Lambda
+  : (2 × 2) → TOPE
+  := \ (t , s) → (s ≡ 0₂) ∨ (t ≡ 1₂)
+
+#def restrict-to-triangle
+  ( A : U)
+  ( f : ((t , s) : Lambda) → A)
+  : ((t , s) : Delta2) → A
+  := \ (t , s) → f (t , s)
