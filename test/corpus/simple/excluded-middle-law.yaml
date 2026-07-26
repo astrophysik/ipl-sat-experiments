@@ -1,0 +1,8 @@
+id: ipl.simple.excluded-middle-law
+source: simple
+tags: [disjunction, negation, classical-separator]
+expected:
+  validity: invalid
+hypotheses: []
+formula: "p ∨ ¬ p"
+provenance: "handwritten IPL classical separator"

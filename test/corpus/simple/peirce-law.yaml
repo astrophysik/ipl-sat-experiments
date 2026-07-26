@@ -1,0 +1,8 @@
+id: ipl.simple.peirce-law
+source: simple
+tags: [implication, classical-separator]
+expected:
+  validity: invalid
+hypotheses: []
+formula: "((p → q) → p) → p"
+provenance: "handwritten IPL classical separator"

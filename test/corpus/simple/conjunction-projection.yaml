@@ -1,0 +1,8 @@
+id: ipl.simple.conjunction-projection
+source: simple
+tags: [conjunction, implication, projection]
+expected:
+  validity: valid
+hypotheses: []
+formula: "p ∧ q → p"
+provenance: "handwritten IPL introduction/projection example"

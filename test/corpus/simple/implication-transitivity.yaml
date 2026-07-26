@@ -1,0 +1,8 @@
+id: ipl.simple.implication-transitivity
+source: simple
+tags: [implication, transitivity]
+expected:
+  validity: valid
+hypotheses: []
+formula: "(p → q) → (q → r) → p → r"
+provenance: "handwritten IPL implication transitivity example"

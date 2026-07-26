@@ -1,0 +1,8 @@
+id: ipl.simple.conjunction-negation
+source: simple
+tags: [conjunction, negation, de-morgan, classical-separator]
+expected:
+  validity: invalid
+hypotheses: []
+formula: "¬ (A ∧ B) ↔ (¬ A ∨ ¬ B)"
+provenance: "handwritten IPL De Morgan separator"

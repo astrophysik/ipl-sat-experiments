@@ -1,0 +1,8 @@
+id: ipl.simple.contradiction
+source: simple
+tags: [conjunction, negation, contradiction]
+expected:
+  validity: invalid
+hypotheses: []
+formula: "p ∧ ¬ p"
+provenance: "handwritten IPL contradiction example"
