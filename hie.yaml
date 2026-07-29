@@ -1,0 +1,10 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "ipl-sat:lib"
+    - path: "./app"
+      component: "ipl-sat:exe:ipl-sat-exe"
+    - path: "./scripts"
+      component: "ipl-sat:exe:convert-iltp"
+    - path: "./test"
+      component: "ipl-sat:test:ipl-sat-test"
