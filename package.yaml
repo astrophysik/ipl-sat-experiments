@@ -46,6 +46,15 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - ipl-sat
+    
+  convert-iltp:
+    main:                ConvertILTP.hs
+    source-dirs:         scripts
+    dependencies:
+    - ipl-sat
+    - directory
+    - filepath
+    - mtl
 
 tests:
   ipl-sat-test:

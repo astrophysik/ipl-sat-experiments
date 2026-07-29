@@ -31,6 +31,7 @@ Name of the corpus group. This should match the directory name under
 Current corpus groups:
 
 - `simple`: textbook IPL formulas
+- `iltp`: generated external propositional IPL benchmarks converted from ILTP
 - `topes`: propositional tope sequents
 - `shott`: end-to-end Rzk files exercising the tope layer through the
   typechecker
@@ -52,8 +53,10 @@ details of a particular harvested query.
 
 Slice and provenance tags:
 
+- `iltp`: converted from the ILTP propositional benchmark archive
 - `tope-prop`: propositional tope sequent over the cube/tope layer
-- `harvested`: selected from instrumented `entailM` output
+- `harvested`: selected from instrumented `rzk` typecheker output
+- `external`: sourced from an external benchmark set
 
 IPL tags:
 
