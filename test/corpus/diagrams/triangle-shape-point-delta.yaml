@@ -1,0 +1,16 @@
+id: diagrams.triangle-shape-point-delta
+kind: diagram-goal
+source: diagrams
+tags: [diagram, existential]
+provenance:
+  kind: harvested
+  note: "same Δ² goal with named shape"
+input:
+  context:
+  - "A : U"
+  - "a : ((t, s) : Δ²) -> A"
+  premises:
+  - "Δ² (t, s) := s <= t"
+  goal: "exists (p : 2 × 2), Δ² p"
+expected:
+  classification: diagram

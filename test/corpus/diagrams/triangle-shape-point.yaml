@@ -1,0 +1,15 @@
+id: diagrams.triangle-shape-point
+kind: diagram-goal
+source: diagrams
+tags: [diagram, existential]
+provenance:
+  kind: harvested
+  note: "shape argument hole for Δ²"
+input:
+  context:
+  - "A : U"
+  - "a : ((t, s) : 2 × 2 | s <= t) -> A"
+  premises: []
+  goal: "exists (t : 2), exists (s : 2), s <= t"
+expected:
+  classification: diagram

@@ -1,0 +1,16 @@
+id: diagrams.rendered-arrow-goal
+kind: diagram-goal
+source: diagrams
+tags: [diagram, existential]
+provenance:
+  kind: harvested
+  note: "holeDiagram test: hom A x y"
+input:
+  context:
+  - "A : U"
+  - "x : A"
+  - "y : A"
+  premises: []
+  goal: "exists (f : (t : 2 | TOP) -> A), f 0₂ = x /\\ f 1₂ = y"
+expected:
+  classification: diagram
