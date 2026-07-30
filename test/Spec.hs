@@ -108,6 +108,16 @@ validateRzkTest input expected = do
     _ ->
       Right ()
 
+validateDiagramGoalTest :: Value -> Value -> Either String ()
+validateDiagramGoalTest input expected = do
+  diagramInput <- requireObject "input" input
+  requireStringArrayField "context" diagramInput
+  requireStringArrayField "premises" diagramInput
+  requireStringField "goal" diagramInput
+
+  diagramExpected <- requireObject "expected" expected
+  requireOneOfStringField "classification" ["diagram", "non-diagram"] diagramExpected
+
 requireObject :: String -> Value -> Either String (KeyMap.KeyMap Value)
 requireObject label value =
   case value of
@@ -127,7 +137,8 @@ validateCorpusObject object = do
   case lookupField "kind" object of
     Just (String "sequent") -> validateSequentTest input expected
     Just (String "rzk") -> validateRzkTest input expected
-    Just (String _) -> Left "kind field must be one of: sequent, rzk"
+    Just (String "diagram-goal") -> validateDiagramGoalTest input expected
+    Just (String _) -> Left "kind field must be one of: sequent, rzk, diagram-goal"
     Just _ -> Left "kind field must be a string"
     Nothing -> Left "Missing kind field"
 

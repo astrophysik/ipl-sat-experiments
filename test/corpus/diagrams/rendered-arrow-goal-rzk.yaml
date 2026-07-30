@@ -1,0 +1,18 @@
+id: diagrams.rendered-arrow-goal-rzk
+kind: diagram-goal
+source: diagrams
+tags: [diagram, existential]
+provenance:
+  kind: harvested
+  note: "Rzk type form for hom A x y"
+input:
+  context:
+  - "A : U"
+  - "x : A"
+  - "y : A"
+  premises:
+  - "t ≡ 0₂ -> f t = x"
+  - "t ≡ 1₂ -> f t = y"
+  goal: "exists (f : hom A x y)"
+expected:
+  classification: diagram

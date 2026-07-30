@@ -1,11 +1,13 @@
 # Test Corpus YAML Schema
 
 Each test case is stored as one YAML file under `test/corpus/<source>/`.
-There are two case kinds:
+There are three case kinds:
 
 - a sequent case, which describes `Ξ | Φ ⊢ ψ` and the expected solver result
 - an Rzk case, which points to a self-contained `.rzk` file and records whether
   the typechecker should accept or reject it
+- a diagram-goal case, which records an existential goal produced while
+  rendering a diagram hole and whether it should be classified as diagrammatic
 
 ## Fields
 
@@ -35,6 +37,7 @@ Current corpus groups:
 - `topes`: propositional tope sequents
 - `shott`: end-to-end Rzk files exercising the tope layer through the
   typechecker
+- `diagrams`: existential goals harvested from diagram rendering
 
 ### `kind`
 
@@ -44,6 +47,7 @@ Allowed values:
 
 - `sequent`: direct solver case for a sequent `Ξ | Φ ⊢ ψ`
 - `rzk`: end-to-end Rzk typechecker case
+- `diagram-goal`: existential goal from diagram rendering
 
 ### `tags`
 
@@ -57,6 +61,9 @@ Slice and provenance tags:
 - `tope-prop`: propositional tope sequent over the cube/tope layer
 - `harvested`: selected from instrumented `rzk` typecheker output
 - `external`: sourced from an external benchmark set
+- `diagram`: sourced from diagram rendering
+- `existential`: goal has existential shape
+- `negative-control`: intentionally ordinary non-diagram goal
 
 IPL tags:
 
@@ -127,6 +134,27 @@ input:
 `rzk` is the name of the `.rzk` file for an Rzk case. The file is a sibling of
 the YAML file and should use the same basename.
 
+### `input` for diagram-goal cases
+
+Input data for an existential goal produced while rendering a diagram hole.
+
+```yaml
+input:
+  context:
+    - "A : U"
+    - "x : A"
+    - "y : A"
+  premises: []
+  goal: "exists (f : (t : 2 | TOP) -> A), f 0₂ = x /\\ f 1₂ = y"
+```
+
+`context` is the surrounding type-theoretic context, as a list of declarations.
+
+`premises` is a list of additional assumptions or shape declarations available
+when checking the goal. Use `[]` when there are none.
+
+`goal` is the existential goal string. Keep it quoted.
+
 ### `expected` for sequent cases
 
 Expected logical result.
@@ -169,6 +197,18 @@ expected:
   typechecks: rejected
   error_contains: "tope"
 ```
+
+### `expected` for diagram-goal cases
+
+Expected classifier result.
+
+```yaml
+expected:
+  classification: diagram
+```
+
+`classification` is `diagram` when the goal should be treated as a diagram
+rendering goal, or `non-diagram` for negative controls.
 
 ### `provenance`
 

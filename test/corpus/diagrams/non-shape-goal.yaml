@@ -1,0 +1,15 @@
+id: diagrams.non-shape-goal
+kind: diagram-goal
+source: diagrams
+tags: [diagram, existential, negative-control]
+provenance:
+  kind: harvested
+  note: "negative control: ordinary non-diagram hole"
+input:
+  context:
+  - "A : U"
+  - "a : A"
+  premises: []
+  goal: "exists (x : A), true"
+expected:
+  classification: non-diagram
