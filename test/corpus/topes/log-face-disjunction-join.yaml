@@ -1,0 +1,17 @@
+id: topes.log-face-disjunction-join
+kind: sequent
+source: topes
+tags: [tope-prop, eq, disjunction, conjunction, coverage, harvested]
+provenance:
+  kind: harvested
+  note: "Selected from propositional-top.log:1324."
+input:
+  context:
+  - "t : 2 × 2"
+  - "x : 2 × 2"
+  hypotheses:
+  - (π₂ t ≡ 0₂ ∨ π₁ t ≡ 1₂) ∧ π₁ t ≡ 1₂ ∨ (π₂ t ≡ 0₂ ∨ π₁ t ≡ 1₂) ∧ π₂ t ≡ 0₂
+  goal: π₂ t ≡ 0₂ ∨ π₁ t ≡ 1₂
+expected:
+  entailment: derivable
+  premises_consistency: consistent
