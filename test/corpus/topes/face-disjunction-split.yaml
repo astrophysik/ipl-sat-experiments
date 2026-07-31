@@ -1,10 +1,10 @@
-id: topes.log-face-disjunction-split
+id: topes.face-disjunction-split
 kind: sequent
 source: topes
 tags: [tope-prop, eq, disjunction, conjunction, coverage, harvested]
 provenance:
   kind: harvested
-  note: "Selected from propositional-top.log:1323."
+  note: "A face boundary disjunction splits into the corresponding tagged alternatives."
 input:
   context:
   - "t : 2 × 2"

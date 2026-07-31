@@ -1,10 +1,10 @@
-id: topes.log-projected-simplex-boundary
+id: topes.projected-simplex-boundary
 kind: sequent
 source: topes
 tags: [tope-prop, eq, leq, disjunction, conjunction, horn, harvested]
 provenance:
   kind: harvested
-  note: "Selected from propositional-top.log:1307."
+  note: "A projected three-point simplex entails its ordered spine and boundary condition."
 input:
   context:
   - "t : 2 × 2 × 2"

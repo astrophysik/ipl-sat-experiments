@@ -1,10 +1,10 @@
-id: topes.log-equality-branch-with-boundary
+id: topes.equality-branch-with-boundary
 kind: sequent
 source: topes
 tags: [tope-prop, eq, leq, disjunction, conjunction, harvested]
 provenance:
   kind: harvested
-  note: "Selected from propositional-top.log:1344."
+  note: "An equality branch entails the induced order together with the boundary witness."
 input:
   context:
   - "t : 2 × 2"

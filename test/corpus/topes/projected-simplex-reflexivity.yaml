@@ -1,10 +1,10 @@
-id: topes.log-pair-reconstruction
+id: topes.projected-simplex-reflexivity
 kind: sequent
 source: topes
-tags: [tope-prop, eq, leq, degenerate, harvested]
+tags: [tope-prop, leq, conjunction, reflexivity, harvested]
 provenance:
   kind: harvested
-  note: "Selected from propositional-top.log:1304."
+  note: "Reflexivity goals over the projected endpoints of a three-point simplex."
 input:
   context:
   - "t : 2 × 2 × 2"
@@ -12,7 +12,7 @@ input:
   - π₂ t ≤ π₂ (π₁ t)
   - π₂ (π₁ t) ≤ π₁ (π₁ t)
   - π₂ t ≤ π₁ (π₁ t)
-  goal: ((π₁ (π₁ t), π₂ (π₁ t)), π₂ t) ≡ (π₁ t, π₂ t)
+  goal: π₁ (π₁ t) ≤ π₁ (π₁ t) ∧ π₂ (π₁ t) ≤ π₂ (π₁ t)
 expected:
   entailment: derivable
   premises_consistency: consistent
