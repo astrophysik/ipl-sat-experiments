@@ -168,13 +168,6 @@ expected:
 `entailment` is `derivable` or `underivable`: whether `Ξ | Φ ⊢ ψ` is derivable
 intuitionistically.
 
-For generated ILTP cases, `entailment` may also be `unsolved`. This preserves
-ILTP's `% Status (intuit.): Unsolved` marker. It is not a claim that the sequent
-is underivable; it marks an exploratory benchmark whose final intuitionistic
-status is unknown to the source corpus. A prover is allowed to solve such cases,
-but exact golden-result tests should not treat `unsolved` as a third logical
-truth value.
-
 `premises_consistency` is `consistent` or `inconsistent`: whether `Ξ | Φ ⊢ BOT`
 is *not* derivable. This is a property of `Φ` alone, independent of the goal, so
 two cases sharing a context agree on it. It is recorded separately because it is
