@@ -3,7 +3,7 @@ import Control.Monad.State
 import Data.Char (isAlpha, isAlphaNum, isSpace, toLower)
 import Data.List (findIndex, isPrefixOf, isSuffixOf, sort, stripPrefix)
 import Data.Maybe (mapMaybe)
-import System.Directory (createDirectoryIfMissing, doesDirectoryExist, listDirectory, removeDirectoryRecursive, doesPathExist)
+import System.Directory (createDirectoryIfMissing, doesDirectoryExist, doesPathExist, listDirectory, removeDirectoryRecursive)
 import System.Environment (getArgs)
 import System.Exit (die)
 import System.FilePath (dropExtension, pathSeparator, splitFileName, splitPath, takeDirectory, (</>))
@@ -56,14 +56,14 @@ data ConvertedProblem = ConvertedProblem
   }
   deriving (Show)
 
-renderProblem :: ParsedProblem -> Maybe ConvertedProblem
+renderProblem :: ParsedProblem -> ConvertedProblem
 renderProblem problem =
   let convertedHypothesis = map renderFormula (parsedHypotheses problem)
    in let convertedConjecture = renderFormula (parsedConjecture problem)
        in case parsedStatus problem of
-            Theorem -> Just $ ConvertedProblem {entailment = "derivable", renderedHypotheses = convertedHypothesis, renderedConjecture = convertedConjecture}
-            NonTheorem -> Just $ ConvertedProblem {entailment = "underivable", renderedHypotheses = convertedHypothesis, renderedConjecture = convertedConjecture}
-            Unsolved -> Nothing
+            Theorem -> ConvertedProblem {entailment = "derivable", renderedHypotheses = convertedHypothesis, renderedConjecture = convertedConjecture}
+            NonTheorem -> ConvertedProblem {entailment = "underivable", renderedHypotheses = convertedHypothesis, renderedConjecture = convertedConjecture}
+            Unsolved -> ConvertedProblem {entailment = "unsolved", renderedHypotheses = convertedHypothesis, renderedConjecture = convertedConjecture}
 
 renderYaml :: FilePath -> String -> ConvertedProblem -> String
 renderYaml filePath caseId problem =
@@ -203,7 +203,7 @@ extractProblem problemSrc = do
 
 data Arguments = Arguments
   { input :: FilePath,
-    output :: FilePath, 
+    output :: FilePath,
     clean :: Bool
   }
   deriving (Show)
@@ -222,13 +222,13 @@ processArgs args = do
       modify (\ctx -> ctx {output = outputPath})
       processArgs rest
     ("--output" : _) -> lift (Left $ "--output requires argument")
-    ("--clean" : rest) -> do 
-        modify (\ctx -> ctx {clean = True})
-        processArgs rest
+    ("--clean" : rest) -> do
+      modify (\ctx -> ctx {clean = True})
+      processArgs rest
     [] -> pure ()
     (arg : _) -> lift (Left $ "Unknown argument " ++ arg)
 
-convertFile :: FilePath -> FilePath -> IO Bool
+convertFile :: FilePath -> FilePath -> IO ()
 convertFile outputPrefix file = do
   fileContent <- readFile file
   let maybeProblem = extractProblem fileContent
@@ -239,16 +239,13 @@ convertFile outputPrefix file = do
       case maybeParsedProblem of
         Left err -> die $ "Catch error during formula parsing : " ++ err
         Right parsedProblem -> do
-          let maybeConvertedProblem = renderProblem parsedProblem
-          case maybeConvertedProblem of
-            Nothing -> pure False
-            Just convertedProblem -> do
-              let outputFileName = (map (\c -> if c == '.' then pathSeparator else c) (formatCaseId file)) ++ ".yaml"
-              let outputFile = renderYaml file ("ipl.iltp." ++ (formatCaseId file)) convertedProblem
-              createDirectoryIfMissing True outputPrefix
-              createDirectoryIfMissing True (takeDirectory $ outputPrefix </> outputFileName)
-              writeFile (outputPrefix </> outputFileName) outputFile
-              pure True
+          let convertedProblem = renderProblem parsedProblem
+          let outputFileName = (map (\c -> if c == '.' then pathSeparator else c) (formatCaseId file)) ++ ".yaml"
+          let outputFile = renderYaml file ("ipl.iltp." ++ (formatCaseId file)) convertedProblem
+          createDirectoryIfMissing True outputPrefix
+          createDirectoryIfMissing True (takeDirectory $ outputPrefix </> outputFileName)
+          writeFile (outputPrefix </> outputFileName) outputFile
+          pure ()
 
 collectProblems :: FilePath -> IO [FilePath]
 collectProblems path = do
@@ -266,19 +263,17 @@ main = do
     Left err ->
       die err
     Right (_, context) -> do
-      isOutputExist <- doesPathExist (output context)   
+      isOutputExist <- doesPathExist (output context)
       when (clean context && isOutputExist) $
-        removeDirectoryRecursive (output context)  
+        removeDirectoryRecursive (output context)
       let problemsPath = (input context) </> "Problems"
       exists <- doesDirectoryExist problemsPath
       unless exists $ do
         die ("problems path " ++ problemsPath ++ " isn't exists ")
       problems <- collectProblems problemsPath
       results <- mapM (\file -> convertFile (output context) file) (problems)
-      let converted = length $ filter id results
-      let skipped = (length results) - converted
+      let converted = length results
       putStrLn $ "converted: " ++ (show converted)
-      putStrLn $ "skipped: " ++ (show skipped)
 
 yamlQuote :: String -> String
 yamlQuote str = "\"" ++ str ++ "\""

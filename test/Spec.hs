@@ -89,7 +89,7 @@ validateSequentTest input expected = do
   requireStringField "goal" sequentInput
 
   sequentExpected <- requireObject "expected" expected
-  requireOneOfStringField "entailment" ["derivable", "underivable"] sequentExpected
+  requireOneOfStringField "entailment" ["derivable", "underivable", "unsolved"] sequentExpected
   requireOneOfStringField
     "premises_consistency"
     ["consistent", "inconsistent"]
