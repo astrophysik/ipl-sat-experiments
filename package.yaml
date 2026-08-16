@@ -56,6 +56,20 @@ executables:
     - filepath
     - mtl
 
+  prover-report:
+    main:                Main.hs
+    source-dirs:         prover-report
+    dependencies:
+    - ipl-sat
+    - g4ip-prover
+    - yaml
+    - mtl
+    - aeson
+    - text
+    - vector
+    - directory
+    - filepath
+
 tests:
   ipl-sat-test:
     main:                Spec.hs

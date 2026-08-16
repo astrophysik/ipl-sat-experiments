@@ -68,6 +68,33 @@ executable ipl-sat-exe
     , ipl-sat
   default-language: Haskell2010
 
+executable prover-report
+  main-is: Main.hs
+  other-modules:
+      Corpus
+      Prover.G4ip
+      Prover.Interface
+      Report.Csv
+      Runner
+      Paths_ipl_sat
+  autogen-modules:
+      Paths_ipl_sat
+  hs-source-dirs:
+      prover-report
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , directory
+    , filepath
+    , g4ip-prover
+    , ipl-sat
+    , mtl
+    , text
+    , vector
+    , yaml
+  default-language: Haskell2010
+
 test-suite ipl-sat-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
