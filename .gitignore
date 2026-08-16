@@ -5,3 +5,4 @@ CLAUDE.md
 .cache/
 test/corpus/iltp/
 test/corpus/external-sequents/iltp
+results/*

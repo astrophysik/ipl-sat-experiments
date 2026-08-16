@@ -3,7 +3,14 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/topics/lock_files
 
-packages: []
+packages:
+- completed:
+    hackage: g4ip-prover-2.0.0.0@sha256:07d3dc55306d1bd7c6de1f6948e15786525dc27c2a367610918971cedbad9b08,1795
+    pantry-tree:
+      sha256: a11a04577e094489cb11c1a55b34e2596893653310a7033bc9391929d61b36b9
+      size: 993
+  original:
+    hackage: g4ip-prover-2.0.0.0
 snapshots:
 - completed:
     sha256: d836e64ec93e8825278b99561f4a7ef24780c9b29bb5338eec2d693ab3a800cd
