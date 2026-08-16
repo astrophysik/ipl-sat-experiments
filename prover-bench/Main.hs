@@ -61,7 +61,7 @@ processArgs args = do
     ("--timeout-ms" : _) -> lift (Left $ "--timeout-ms requires argument")
     ["--help"] -> lift (Left usage)
     [] -> pure ()
-    (arg : _) -> lift (Left $ "Unknown argument " ++ (show arg))
+    (arg : _) -> lift (Left $ "Unknown argument " ++ (show arg) ++ "\n\n" ++ usage)
 
 requireArguments :: ParsedArguments -> Either String Arguments
 requireArguments parsed = do
@@ -78,12 +78,12 @@ requireArguments parsed = do
 usage :: String
 usage =
   unlines
-    [ "prover-report",
+    [ "prover-bench",
       "",
       "Run sequent cases from the YAML test corpus with the G4ip prover and write a CSV report.",
       "",
       "Usage:",
-      "  stack run prover-report -- --corpus test/corpus --output results --timeout-ms 100",
+      "  stack run prover-bench -- --corpus test/corpus --output results --timeout-ms 100",
       "",
       "Options:",
       "  --corpus PATH       Required. Corpus root to scan recursively for .yaml files.",

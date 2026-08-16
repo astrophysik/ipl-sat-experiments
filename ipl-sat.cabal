@@ -68,7 +68,7 @@ executable ipl-sat-exe
     , ipl-sat
   default-language: Haskell2010
 
-executable prover-report
+executable prover-bench
   main-is: Main.hs
   other-modules:
       Corpus
@@ -80,7 +80,7 @@ executable prover-report
   autogen-modules:
       Paths_ipl_sat
   hs-source-dirs:
-      prover-report
+      prover-bench
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       aeson

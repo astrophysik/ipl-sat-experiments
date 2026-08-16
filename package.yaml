@@ -56,9 +56,9 @@ executables:
     - filepath
     - mtl
 
-  prover-report:
+  prover-bench:
     main:                Main.hs
-    source-dirs:         prover-report
+    source-dirs:         prover-bench
     dependencies:
     - ipl-sat
     - g4ip-prover
