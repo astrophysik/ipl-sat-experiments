@@ -74,6 +74,7 @@ executable prover-bench
       Corpus
       Prover.G4ip
       Prover.Interface
+      Prover.Rzk
       Report.Csv
       Runner
       Paths_ipl_sat
@@ -87,9 +88,11 @@ executable prover-bench
     , base >=4.7 && <5
     , directory
     , filepath
+    , free-foil
     , g4ip-prover
     , ipl-sat
     , mtl
+    , rzk
     , text
     , vector
     , yaml
