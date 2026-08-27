@@ -42,9 +42,14 @@ packages:
 #
 extra-deps:
 - g4ip-prover-2.0.0.0
+- rzk-0.11.2
+- free-foil-0.3.2
+- kind-generics-th-0.2.3.3
 
 # Override default flag values for project packages and extra-deps
-# flags: {}
+flags:
+  rzk:
+    lsp: false
 
 # Extra package databases containing global packages
 # extra-package-dbs: []

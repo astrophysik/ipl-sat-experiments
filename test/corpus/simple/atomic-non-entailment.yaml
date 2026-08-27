@@ -1,0 +1,15 @@
+id: ipl.simple.atomic-non-entailment
+kind: sequent
+source: simple
+tags: [atom, underivable, tope-fragment]
+provenance:
+  kind: handwritten
+  note: "Independent atoms are not entailed in the pure tope fragment."
+input:
+  context: []
+  hypotheses:
+    - p
+  goal: q
+expected:
+  entailment: underivable
+  premises_consistency: consistent

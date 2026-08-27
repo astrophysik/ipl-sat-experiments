@@ -61,7 +61,9 @@ executables:
     source-dirs:         prover-bench
     dependencies:
     - ipl-sat
+    - free-foil
     - g4ip-prover
+    - rzk
     - yaml
     - mtl
     - aeson
